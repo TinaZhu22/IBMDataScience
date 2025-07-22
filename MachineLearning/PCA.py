@@ -11,7 +11,7 @@ np.random.seed(42)
 mean = [0, 0]
 cov = [[3, 2], [2, 2]]
 X = np.random.multivariate_normal(mean=mean, cov=cov, size=200)
-print(X)
+
 
 # Scatter plot of the two features
 plt.figure()
@@ -30,5 +30,6 @@ X_pca = pca.fit_transform(X)
 components = pca.components_
 print(components)
 
-print(pca.explained_variance_ratio_)
+print(pca.explained_variance_ratio_[0])
+print('First component explains over '+str(pca.explained_variance_ratio_[0])+' of the variance in the data')
 
